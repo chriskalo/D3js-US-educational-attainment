@@ -185,7 +185,7 @@ d3.json("assets/data/us.json", function(data) {
                     color = d3.scaleLinear().domain([0, 1/4*50, 2/4*50, 3/4*50, 50]).range(["#73c3bf", "#73c3bf", "#73c3bf", "#73c3bf"]);
                     return d["Percent College - Male"];
                 } else {
-                    color = d3.scaleLinear().domain([0, 1/4*50, 2/4*50, 3/4*50, 50]).range(["#73c3bf", "#73c3bf", "#73c3bf", "#73c3bf"]);
+                    color = d3.scaleLinear().domain([0, 1/4*50, 2/4*50, 3/4*50, 50]).range(["#ff0000", "#ff0000", "#ff0000", "#ff0000"]);
                     return d["Percent College - Female"];
                 }
 
