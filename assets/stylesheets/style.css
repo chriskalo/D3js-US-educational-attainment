@@ -92,7 +92,7 @@ label{
 .radio-toolbar label {
 
   display: block;
-  background-color: #bbb;
+  background-color: none;
   padding: 4px 11px;
   font-family: "Arial";
   font-size: 15px;
