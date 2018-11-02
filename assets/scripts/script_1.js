@@ -145,6 +145,7 @@ function donutChart() {
                         .html(toolTipHTML(data)) // add text to the circle.
                         .style('font-size', '.9em')
                         .style('text-anchor', 'middle'); // centres text in tooltip
+                        responsivevoice.speak('text-anchor');
 
                     pieChartSVG.append('circle')
                         .attr('class', 'toolCircle')
