@@ -139,11 +139,11 @@ function donutChart() {
                 // add tooltip (svg circle element) when mouse enters label or slice
                 selection.on('mouseenter', function (data) {
 
-                        $('text').mouseenter(function(){
+                        $(data).mouseenter(function(){
 		         responsiveVoice.cancel(); 
   		         responsiveVoice.speak($(this).text());
                            });
-                          $('text').mouseleave(function(){
+                          $(data).mouseleave(function(){
                           responsiveVoice.cancel();
     	                   });
                         pieChartSVG.append('text')
