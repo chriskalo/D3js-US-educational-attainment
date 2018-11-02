@@ -139,13 +139,20 @@ function donutChart() {
                 // add tooltip (svg circle element) when mouse enters label or slice
                 selection.on('mouseenter', function (data) {
 
-                    pieChartSVG.append('text')
+                        $('text').mouseenter(function(){
+		         responsiveVoice.cancel(); 
+  		         responsiveVoice.speak($(this).text());
+                           });
+                          $('text').mouseleave(function(){
+                          responsiveVoice.cancel();
+    	                   });
+                        pieChartSVG.append('text')
                         .attr('class', 'toolCircle')
                         .attr('dy', -15) // hard-coded. can adjust this to adjust text vertical alignment in tooltip
                         .html(toolTipHTML(data)) // add text to the circle.
                         .style('font-size', '.9em')
                         .style('text-anchor', 'middle'); // centres text in tooltip
-                        responsivevoice.speak('text-anchor');
+                        
 
                     pieChartSVG.append('circle')
                         .attr('class', 'toolCircle')
