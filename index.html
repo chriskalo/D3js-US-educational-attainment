@@ -14,25 +14,48 @@
 </head>
  <header>
        <nav>
-    <ul>
+    <ul id="nav">
       <li><a href="#top" onmouseover="playclip();" >Top</a></li>
-      <li><a href="#national" onmouseover="playclip();">National</a></li>
-      <li><a href="#regional" onmouseover="playclip();">Regional</a></li>
-      <li><a href="#state" onmouseover="playclip();">State-Level</a></li>
+      <li><a href="#national" onclick="showhide('nationwide');" onmouseover="playclip();">National</a></li>
+      <li><a href="#regional" onclick="showhide('regionlevel');" onmouseover="playclip();">Regional</a></li>
+      <li><a href="#state" onclick="showhide('statelevel');" onmouseover="playclip();">State-Level</a></li>
     <ul>
         </nav>
     </header>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	       
 <body>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    
+	<script type="text/javascript">
+	$("#nav").addClass("js").before('<div id="menu">&#9776;</div>');
+	$("#menu").click(function(){
+		$("#nav").toggle();
+	});
+	$(window).resize(function(){
+		if(window.innerWidth > 768) {
+			$("#nav").removeAttr("style");
+		}
+	});
+        </script>
 	
-    <h1 class="title" onmouseover="responsiveVoice.speak('Educational Attainment in the United States');" onmouseleave="responsiveVoice.cancel();" >Educational Attainment in the United States</h1>
+	
+	
+	
+	
+	
+	
+	
+	<h1 class="title" onmouseover="responsiveVoice.speak('Educational Attainment in the United States');" onmouseleave="responsiveVoice.cancel();" >Educational Attainment in the United States</h1>
         
-	
+	<div class="hide" id="nationwide">
 	<p><br></p>
     <h2 class="subtitle" onmouseover="responsiveVoice.speak('Nation-Wide Education Level of Population in Schooling');" onmouseleave="responsiveVoice.cancel();">Nation-Wide Education Level of Population in Schooling</h2>
 	
     <svg id="pie-chart" width="960" height="450"></svg><a name="regional"></a>
+	</div>
+	
+    <div class="hide" id="regionlevel">
     <p><br><br><br></p>
     <h2 class="subtitle" onmouseover="responsiveVoice.speak('Educational Attainment: Region-level Breakdown of University Students');" onmouseleave="responsiveVoice.cancel();">Educational Attainment: Region-level Breakdown of University Students</h2>
 	
@@ -50,6 +73,9 @@
     </form>
 	<p></p>
     <div id="chart"></div>
+	</div>
+	
+	<div class="hide" id="statelevel">
 	<a name="state"></a>
     <p><br><br></p>
     <h2 class="subtitle" onmouseover="responsiveVoice.speak('Education Level of Population in Schooling: State-level Breakdown');" onmouseleave="responsiveVoice.cancel();">Education Level of Population in Schooling: State-level Breakdown</h2>
@@ -65,6 +91,7 @@
     <div>
         <svg id="stacked-bar-chart"></svg>
     </div>
+	</div>
 	
 	
 <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -88,7 +115,26 @@
    Should be equal the the height of the header
  */
 </script>
-	<audio>
+	
+	
+<script>
+	
+	function showhide(id){
+        if (document.getElementById) {
+          var divid = document.getElementById(id);
+          var divs = document.getElementsByClassName("hide");
+          for(var i=0;i<divs.length;i++) {
+            divs[i].style.display = "none";
+          }
+          divid.style.display = "block";
+        } 
+        return false;
+ }
+document.getElementById("regionlevel").style.display = "none";
+document.getElementById("statelevel").style.display = "none";
+ </script>
+	
+<audio>
 <source src="click.mp3"></source>
 <source src="click.ogg"></source>
 </audio>
