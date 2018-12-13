@@ -1,11 +1,11 @@
 (function(d3) {
 	"use strict";
 	var dataset = [
-		{ label: "Lorem", count: 10, enabled: false },
-		{ label: "Ipsum", count: 24, enabled: true },
-		{ label: "Dolor", count: 35, enabled: true },
-		{ label: "Sit", count: 17, enabled: true },
-		{ label: "Amet", count: 14, enabled: true }
+		{ label: "Σύνολο Χώρας", count: 40.2, enabled: false },
+		{ label: "Βόρεια Ελλάς", count: 41.3, enabled: true },
+		{ label: "Κεντρική Ελλάς", count: 35.5, enabled: true },
+		{ label: "Αττική", count: 40.6, enabled: true },
+		{ label: "Νήσοι Αιγαίου και Κρήτη", count: 45.7, enabled: true }
 	];
 
 	var totalObj = dataset.length;
