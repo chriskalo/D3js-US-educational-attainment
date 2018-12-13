@@ -1,6 +1,6 @@
 //JSON data
-var data=[{"date":2013,"success":3490841}, {"date":2014,"success":3551069},{"date":2015,"success":3626755},
-{"date":2016,"success":3702270},{"date":2017,"success":3791256}]
+var data=[{"date":2013,"Άνεργοι":3490841}, {"date":2014,"Άνεργοι":3551069},{"date":2015,"Άνεργοι":3626755},
+{"date":2016,"Άνεργοι":3702270},{"date":2017,"Άνεργοι":3791256}]
 
 //array of keys except date
 var keys = d3.keys(data[0]).filter(function(key) { return key !== "date"; });
