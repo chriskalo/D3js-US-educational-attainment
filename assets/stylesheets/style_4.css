@@ -1,0 +1,21 @@
+rect {
+  stroke-width: 2;
+  cursor: pointer;
+}
+
+rect.disabled {
+  fill: transparent !important;
+}
+
+circle {
+  fill: transparent !important;
+  stroke-width: 5;
+  cursor: pointer;
+  opacity: 1;
+}
+
+circle.disabled {
+  opacity: .6;
+  stroke: #0ff !importatnt;
+  fill: transparent !important;
+}
